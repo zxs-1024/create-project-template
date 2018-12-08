@@ -24,6 +24,7 @@ createTemplate()
 命令行：
 
 ```javascript
+// 默认生成 feature 文件夹
 node index.js [feature-file]
 ```
 
