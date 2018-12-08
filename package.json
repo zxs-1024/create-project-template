@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "git@github.com:zhanghao-zhoushan/create-project-template.git",
   "author": "hao.zhang <735296233@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "file": "node test.js"
+  }
 }
