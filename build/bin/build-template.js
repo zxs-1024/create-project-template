@@ -8,7 +8,7 @@ const stat = promisify(fs.stat)
 const readFile = promisify(fs.readFile)
 const writeFile = promisify(fs.writeFile)
 
-const featurePath = process.argv[2] // 功能文件名
+const featurePath = process.argv[2] || 'feature' // 功能文件名
 let basePath = 'src/components' // 目标路径
 let tempPath = './template' // 模板路径
 
