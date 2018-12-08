@@ -1,0 +1,9 @@
+{
+  "name": "create-project-template",
+  "version": "1.0.0",
+  "description": "📜 帮助你创建你的项目模板文件",
+  "main": "index.js",
+  "repository": "git@github.com:zhanghao-zhoushan/create-project-template.git",
+  "author": "hao.zhang <735296233@qq.com>",
+  "license": "MIT"
+}
