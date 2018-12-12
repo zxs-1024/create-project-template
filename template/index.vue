@@ -1,6 +1,6 @@
 <template>
-  <div class="content">
-    <h1>feature</h1>
+  <div class="$kebabCase$">
+    <h1>$camelCase$</h1>
   </div>
 </template>
 
@@ -8,17 +8,21 @@
 import { params, rule } from './config.js'
 
 export default {
-  name: 'feature',
+  name: '$camelCase$',
   mixins: [],
 
   data () {
     return {
       params,
-      rule
+      rule,
+      loading: false,
+      tableData: []
     }
   },
 
-  created () { },
+  created () {
+    this.searchData()
+  },
 
   mounted () { },
 
@@ -26,7 +30,22 @@ export default {
 
   filters: {},
 
-  methods: {},
+  methods: {
+    searchData () {
+      this.loading = true
+
+      this.axios.post('/user', {
+        ...this.params
+      })
+        .then(data => {
+          this.tableData = data
+          this.loading = false
+        })
+        .catch(() => {
+          this.loading = false
+        })
+    }
+  },
 
   components: {}
 }

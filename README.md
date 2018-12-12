@@ -65,6 +65,25 @@ npm run file feature
 yarn file feature
 ```
 
-## LICENSE
+## 字符串替换 => 驼峰、短横线
+
+```js
+<div class="$kebabCase$">
+  <h1>$camelCase$</h1>
+</div>
+```
+
+```
+$kebabCase$-table.vue
+```
+
+你可以在模板文件中添加 $camelCase$、$kebabCase$ 的字符串，运行脚本后会将字符串替换成驼峰、短横线形式。
+
+## 更新记录
+
+- 2018-12-08 🎉 v1.0.0 create-project-template
+- 2018-12-12 ✨ v1.0.2 将模板文件内容、文件名中的 $camelCase$、$kebabCase$ 字符串替换成驼峰、短横线形式。
+
+## LICENSEv
 
 [MIT](LICENSE)

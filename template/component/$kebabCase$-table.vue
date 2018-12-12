@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <h1>feature-table</h1>
+  <div class="$kebabCase$__table">
+    <h1>$camelCase$Table</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'feature-table',
+  name: '$camelCase$Table',
   mixins: [],
 
   data () {

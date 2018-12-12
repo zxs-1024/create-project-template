@@ -12,6 +12,8 @@ const featurePath = process.argv[2] || 'feature' // 功能文件名
 let basePath = 'src/components' // 目标路径
 let tempPath = './template' // 模板路径
 
+const { replaceString } = require('./replace-string')
+
 // 递归处理模板文件
 async function transTemplateFile(tempPath, depthPath = '') {
   if (!fs.existsSync(tempPath)) {
@@ -65,17 +67,22 @@ async function makeDirPath(dirPath) {
 }
 
 // 文件读取、写入
-async function readAndWriteFile(source, copy) {
+async function readAndWriteFile(source, target) {
   const data = await readFile(source)
-  if (fs.existsSync(copy)) {
+  if (fs.existsSync(target)) {
     console.log(
-      `😂  请注意，已经存在 ${copy} 文件，为了防止文件覆盖，已经帮你中断写入啦！`
+      `😂  请注意，已经存在 ${target} 文件，为了防止文件覆盖，已经帮你中断写入啦！`
     )
     return Promise.resolve()
   }
-  await writeFile(copy, data).then(() =>
-    console.log(`📄  写入 ${copy} 文件成功！`)
-  )
+
+  // trans component name、class
+  await writeFile(
+    replaceString(target, featurePath),
+    replaceString(data, featurePath)
+  ).then(() => {
+    console.log(`📄  写入 ${target} 文件成功！`)
+  })
 }
 
 // 主流程函数
