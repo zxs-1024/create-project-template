@@ -40,7 +40,7 @@ const createTemplate = require('create-project-template')
 // use config
 createTemplate.use({
   sourcePath: 'src/components',
-  templatePath: 'template1'
+  templatePath: 'template'
 })
 
 createTemplate()
