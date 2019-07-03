@@ -1,8 +1,8 @@
 # create-project-template
 
-📄 帮助你创建你的项目模板文件。
+📄 Help you create your project template file.
 
-## 安装
+## Install
 
 ```javascript
 // use npm
@@ -12,7 +12,7 @@ npm install create-project-template -save-dev
 yarn add create-project-template --dev
 ```
 
-## 快速使用
+## Quick use
 
 ```javascript
 // index.js
@@ -21,18 +21,18 @@ const createTemplate = require('create-project-template')
 createTemplate()
 ```
 
-命令行：
+### Command：
 
 ```javascript
-// 默认生成 feature 文件夹
+// Default create feature folder.
 node index.js [feature-file]
 ```
 
-## 路径配置
+## Path config
 
-> 你可以通过调用 use 方法，来配置你的模板文件路径、输入路径。
+> You can configure your template file path and input path by calling the use method.
 
-引入 create-project-template：
+import create-project-template：
 
 ```javascript
 const createTemplate = require('create-project-template')
@@ -46,9 +46,9 @@ createTemplate.use({
 createTemplate()
 ```
 
-## 快捷命令
+## Quick command
 
-增加快捷命令，在 package.json 增加 scripts：
+Add quick command, add scripts in package.json:
 
 ```json
 "scripts": {
@@ -65,7 +65,7 @@ npm run file feature
 yarn file feature
 ```
 
-## 字符串替换 => 驼峰、短横线
+## Replacing them with kebabCase、camelCase strings.
 
 ```js
 <div class="$kebabCase$">
@@ -77,13 +77,13 @@ yarn file feature
 $kebabCase$-table.vue
 ```
 
-你可以在模板文件中添加 $camelCase$、$kebabCase$ 的字符串，运行脚本后会将字符串替换成驼峰、短横线形式。
+You can add strings of $camelCase$, $kebabCase$ to the template file. After running the script, the strings are replaced by camelCase and kebabCase.
 
-## 更新记录
+## Update records
 
-- 2018-12-08  🎉  v1.0.0 create-project-template
-- 2018-12-12  ✨ v1.0.2 将模板文件内容、文件名中的 $camelCase$、$kebabCase$ 字符串替换成驼峰、短横线形式。
+- 2018-12-08  🎉 v1.0.0 create-project-template.
+- 2018-12-12  ✨ v1.0.2 You can add strings of $camelCase$, $kebabCase$ to the template file. After running the script, the strings are replaced by camelCase and kebabCase.
 
-## LICENSEv
+## LICENSE
 
 [MIT](LICENSE)
