@@ -1,3 +1,9 @@
+<!--
+ * @Author: hao.zhang
+ * @Date: 2019-08-13 15:01:03
+ * @LastEditors: hao.zhang
+ * @LastEditTime: 2019-08-13 15:06:43
+ -->
 # create-project-template
 
 📄 Help you create your project template file.
@@ -32,7 +38,7 @@ node index.js [feature-file]
 
 > You can configure your template file path and input path by calling the use method.
 
-import create-project-template：
+Import `create-project-template`
 
 ```javascript
 const createTemplate = require('create-project-template')
@@ -48,7 +54,7 @@ createTemplate()
 
 ## Quick command
 
-Add quick command, add scripts in package.json:
+Add quick command in package.json:
 
 ```json
 "scripts": {
@@ -56,7 +62,7 @@ Add quick command, add scripts in package.json:
 }
 ```
 
-在命令行执行：
+Execute on the command line:
 
 ```javascript
 // use npm
@@ -65,7 +71,9 @@ npm run file feature
 yarn file feature
 ```
 
-## Replacing them with kebabCase、camelCase strings.
+## Replacing
+
+Replacing them with kebabCase、camelCase strings.
 
 ```js
 <div class="$kebabCase$">
@@ -73,7 +81,7 @@ yarn file feature
 </div>
 ```
 
-```
+```bash
 $kebabCase$-table.vue
 ```
 
