@@ -1,21 +1,25 @@
 {
   "name": "create-project-template",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "📜 帮助你创建你的项目模板文件",
   "keywords": [
     "node.js",
-    "javascript",
-    "template"
+    "create template"
   ],
   "main": "index.js",
+  "type": "module",
   "repository": "git@github.com:zhanghao-zhoushan/create-project-template.git",
   "author": "hao.zhang <735296233@qq.com>",
   "license": "MIT",
   "scripts": {
-    "file": "node test.js"
+    "test": "node examples/test.js",
+    "file": "node examples/globby.js"
   },
   "dependencies": {
+    "ejs": "^3.1.6",
+    "globby": "^12.2.0",
     "lodash.camelcase": "^4.3.0",
-    "lodash.kebabcase": "^4.1.1"
+    "lodash.kebabcase": "^4.1.1",
+    "prompts": "^2.4.2"
   }
 }
