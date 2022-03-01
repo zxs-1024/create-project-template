@@ -1,10 +1,7 @@
 import fs from 'fs'
 import { mkdir, readdir, readFile, writeFile, stat } from 'fs/promises'
-import path from 'path'
 import ejs from 'ejs'
-
-const sourcePath = 'src/source'
-const targetPath = 'src/target'
+import { globby } from 'globby'
 
 // 读取模板字符串，调用 ejs 渲染模板
 async function renderFile(name, data, options = {}) {
@@ -30,22 +27,15 @@ function getFileDirPath(filePath = '') {
   return arr.slice(0, arr.length - 1).join('/')
 }
 
-// 递归处理模板文件
-async function transTemplateFile(tempPath, options) {
-  if (!fs.existsSync(tempPath)) {
-    return Promise.reject(`😂  没有找到 ${tempPath} 模板文件夹！`)
-  }
-
-  // tempPath 中文件名的数组
-  const files = await readdir(tempPath)
+// 处理模板文件
+async function transTemplateFile(files, prompts, options) {
+  const { sourcePath, targetPath } = options
 
   for (const file of files) {
-    const filePath = path.join(tempPath, file)
-    const stats = await stat(filePath)
-
+    const stats = await stat(file)
     if (stats.isFile()) {
-      const content = await renderFile(filePath, options)
-      const writePath = filePath.replace(new RegExp(sourcePath), targetPath)
+      const content = await renderFile(file, prompts, options)
+      const writePath = file.replace(new RegExp(sourcePath), targetPath)
       const fileDirPath = getFileDirPath(writePath)
       if (!fs.existsSync(fileDirPath)) {
         await mkdir(fileDirPath, { recursive: true }).then(() =>
@@ -54,27 +44,32 @@ async function transTemplateFile(tempPath, options) {
       }
       await attemptWriteFile(writePath, content)
     }
-
-    if (stats.isDirectory()) {
-      const featureFilePath = path.join(sourcePath, file)
-      if (!fs.existsSync(featureFilePath)) {
-        await mkdir(featureFilePath, { recursive: true }).then(() =>
-          console.log(`📂  创建 ${featureFilePath} 文件夹成功！`)
-        )
-      }
-      await transTemplateFile(filePath, file, options)
-    }
   }
 }
 
 // 主流程函数
-async function createTemplate(options) {
+async function createTemplate(prompts, options = {}) {
+  const { sourcePath, targetPath } = options
+  if (!options.sourcePath) {
+    return Promise.reject(`😂  请传入模板地址！`)
+  }
+
+  if (!options.targetPath) {
+    return Promise.reject(`😂  请传入模板输出地址！`)
+  }
+
   console.log('🔥  开始创建你的模板文件！')
 
   await mkdir(targetPath, { recursive: true })
 
-  // 递归创建模板文件
-  await transTemplateFile(sourcePath, options)
+  if (!fs.existsSync(sourcePath)) {
+    return Promise.reject(`😂  没有找到 ${sourcePath} 模板文件夹！`)
+  }
+
+  const files = await globby([sourcePath + '/**/*'])
+
+  // 循环模板文件
+  await transTemplateFile(files, prompts, options)
     .then(() => console.log('🎉  你的模板文件已创建完毕 => 冲鸭！！！'))
     .catch(err => console.error(err))
 }

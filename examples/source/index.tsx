@@ -1,1 +1,1 @@
-const a = <%= age; %>
+const a = <%= name; %>
