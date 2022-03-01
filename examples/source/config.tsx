@@ -2,4 +2,4 @@
 <h2><%= name %></h2>
 <% } %>
 
-<%= age; %>
+<%= hasDetailPage; %>

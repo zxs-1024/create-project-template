@@ -30,11 +30,6 @@ ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-array-union@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npm.taobao.org/array-union/download/array-union-3.0.1.tgz?cache=0&sync_timestamp=1614624262896&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Farray-union%2Fdownload%2Farray-union-3.0.1.tgz#da52630d327f8b88cfbfb57728e2af5cd9b6b975"
-  integrity sha1-2lJjDTJ/i4jPv7V3KOKvXNm2uXU=
-
 async@0.9.x:
   version "0.9.2"
   resolved "https://registry.npmmirror.com/async/download/async-0.9.2.tgz#aea74d5e61c1f899613bf64bda66d4c78f2fd17d"
@@ -105,7 +100,7 @@ escape-string-regexp@^1.0.5:
   resolved "https://registry.nlark.com/escape-string-regexp/download/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-fast-glob@^3.2.7:
+fast-glob@^3.2.11:
   version "3.2.11"
   resolved "https://registry.npmmirror.com/fast-glob/download/fast-glob-3.2.11.tgz#a1172ad95ceb8a16e20caa5c5e56480e5129c1d9"
   integrity sha512-xrO3+1bxSo3ZVHAnqzyuewYT6aMFHRAd4Kcs92MAonjwQZLsK9d0SF1IyQ3k5PoirxTW0Oe/RqFgMQ6TcNE5Ew==
@@ -144,15 +139,14 @@ glob-parent@^5.1.2:
   dependencies:
     is-glob "^4.0.1"
 
-globby@^12.2.0:
-  version "12.2.0"
-  resolved "https://registry.npmmirror.com/globby/download/globby-12.2.0.tgz#2ab8046b4fba4ff6eede835b29f678f90e3d3c22"
-  integrity sha512-wiSuFQLZ+urS9x2gGPl1H5drc5twabmm4m2gTR27XDFyjUHJUNsS8o/2aKyIF6IoBaR630atdher0XJ5g6OMmA==
+globby@^13.0.0:
+  version "13.0.0"
+  resolved "https://registry.npmmirror.com/globby/download/globby-13.0.0.tgz#1118e53acc5e0f32fc06d5fc592ce701ba239474"
+  integrity sha512-peWsS6/uJ4lRXg7qK11lnkMTIdoDp35bpJzpR3vpRNFkP1qMNsM7OQvUqwe6r+9RCT6VpEAhL9DDrK/jD0PGvw==
   dependencies:
-    array-union "^3.0.1"
     dir-glob "^3.0.1"
-    fast-glob "^3.2.7"
-    ignore "^5.1.9"
+    fast-glob "^3.2.11"
+    ignore "^5.2.0"
     merge2 "^1.4.1"
     slash "^4.0.0"
 
@@ -161,7 +155,7 @@ has-flag@^3.0.0:
   resolved "https://registry.nlark.com/has-flag/download/has-flag-3.0.0.tgz?cache=0&sync_timestamp=1626715907927&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fhas-flag%2Fdownload%2Fhas-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
   integrity sha1-tdRU3CGZriJWmfNGfloH87lVuv0=
 
-ignore@^5.1.9:
+ignore@^5.2.0:
   version "5.2.0"
   resolved "https://registry.npmmirror.com/ignore/download/ignore-5.2.0.tgz#6d3bac8fa7fe0d45d9f9be7bac2fc279577e345a"
   integrity sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==
